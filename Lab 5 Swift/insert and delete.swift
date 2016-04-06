@@ -54,13 +54,13 @@ public class List<T>{
     //***************************************
     func delete(input: [String]) {
         print("In delete function")
-        let remove_this_id:Int? = (input[1]).toInt()
-        print("\(remove_this_id)")
+        let looking_id:Int? = (input[1]).toInt()
+        print("\(looking_id)")
 
         var checker:    FacultyMember<T> = head
         var previous:   FacultyMember<T> = head
         while(checker != nil){
-            if(checker.idnum==remove_this_id){
+            if(checker.idnum==looking_id){
                 previous.next = checker.next
                 return
             }
@@ -70,7 +70,70 @@ public class List<T>{
             }
         }
         //if we get to this point, the ID does not exist!
-        print("ERROR: ID" + remove_this_id + " does not exist")
+        print("ERROR: ID" + looking_id + " does not exist")
+    }
+
+    //***************************************
+    //          UPDATE DEPARTMENT
+    //***************************************
+    func update_department(input: [String]) {
+        print("In update department function")
+        let looking_idnum:Int? = (input[1]).toInt()
+        let looking_name = input[2]
+        let new_dept = input[3]       
+        print("(id) + (name) + (new_dept)")
+
+        var checker:    FacultyMember<T> = head
+        while(checker!=nil){
+            if(checker.idnum == looking_idnum && checker.name==looking_name){
+                print("SUCCESS: ID[" + looking_idnum + "] with name [" + looking_name + "] has been updated with new department[" + new_dept + "]")
+                checker.dept = new_dept;
+                return
+            }
+        }
+        print("ERROR: ID" + looking_idnum + " with name " + looking_name + " does not exist")
+    }
+
+    //***************************************
+    //              UPDATE TITLE
+    //***************************************
+    func update_title(input: [String]) {
+        print("In update title function")
+    
+        let looking_idnum:Int? = (input[1]).toInt()
+        let looking_name = input[2]
+        let new_title = input[3]
+
+        var checker:    FacultyMember<T> = head
+        while(checker!=nil){
+            if(checker.idnum == looking_idnum && checker.name==looking_name){
+                checker.title = new_title;
+                print("SUCCESS: ID[" + looking_idnum + "] with name [" + looking_name + "] has been updated with new title[" + new_title + "]")
+                return
+            }
+        }
+        print("ERROR: ID" + looking_idnum + " with name " + looking_name + " does not exist")
+    }
+
+    //***************************************
+    //              UPDATE PAY
+    //***************************************
+    func update_pay(input: [String]) {
+        print("In update pay function")
+    
+        let looking_idnum:Int? = (input[1]).toInt()
+        let looking_name = input[2]
+        let new_pay:String? = (input[3])
+
+        var checker:    FacultyMember<T> = head
+        while(checker!=nil){
+            if(checker.idnum == looking_idnum && checker.name==looking_name){
+                print("SUCCESS: ID[" + looking_idnum + "] with name [" + looking_name + "] has been updated with new pay[" + new_pay + "]")
+                checker.pay = new_pay;
+                return
+            }
+        }
+        print("ERROR: ID" + looking_idnum + " with name " + looking_name + " does not exist")
     }
 }
 
