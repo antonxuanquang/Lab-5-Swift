@@ -21,32 +21,8 @@ class FacultyMember<T> {
         self.pay = pay
         self.next = nil
     }
-}
-/*
-public class List<T>{
-    private var head: FacultyMember<T> =  FacultyMember<T>()
-    func insert(newNode: FacultyMember<T>){
-        if(newNode==nil){
-            head = newNode
-            return
-        }
-        else{
-            var checker:    FacultyMember<T> = head
-            var previous:   FacultyMember<T> = head
-            while(checker != nil){
-                if(checker.idnum==newNode.idnum || checker.name==newNode.name){
-                    print("ERROR: Can't insert because the member already exists")
-                }
-                else if(newNode.idnum>checker.idnum){
-                    previous.next = newNode
-                    newNode.next = checker
-                }
-                else{
-                    previous = checker
-                    checker = checker.next!
-                }
-            }
-        }
+
+    func printSelf(){
+        print(idnum + "    " + name + "        " + dept + "    " + title + "       " + pay)
     }
 }
-*/

@@ -90,6 +90,7 @@ public class List<T>{
                 checker.dept = new_dept;
                 return
             }
+            checker = checker.next!
         }
         print("ERROR: ID" + looking_idnum + " with name " + looking_name + " does not exist")
     }
@@ -111,6 +112,7 @@ public class List<T>{
                 print("SUCCESS: ID[" + looking_idnum + "] with name [" + looking_name + "] has been updated with new title[" + new_title + "]")
                 return
             }
+            checker = checker.next!
         }
         print("ERROR: ID" + looking_idnum + " with name " + looking_name + " does not exist")
     }
@@ -132,8 +134,66 @@ public class List<T>{
                 checker.pay = new_pay;
                 return
             }
+            checker = checker.next!
         }
         print("ERROR: ID" + looking_idnum + " with name " + looking_name + " does not exist")
+    }
+
+    //***************************************
+    //              PRINT ALL
+    //***************************************
+    func print_all() {
+        var checker:    FacultyMember<T> = head
+        while(checker!=nil){
+            checker.printSelf();
+            checker = checker.next!
+        }
+    }
+    //***************************************
+    //              PRINT SPECIFIC ID
+    //***************************************
+    func print_ID(input: [String]) {
+        let looking_idnum:Int? = (input[1]).toInt()
+        let looking_name = input[2]
+
+        var checker:    FacultyMember<T> = head
+        while(checker!=nil){
+            if(checker.idnum==looking_idnum && checker.name==looking_name){
+                checker.printSelf();
+                return
+            }
+            checker = checker.next!
+        }
+        print("ERROR: Member with ID[" + looking_idnum + "] and name[" + looking_name + "] was not found!")
+
+    }
+
+    //***************************************
+    //              PRINT TITLE
+    //***************************************
+    func print_title(input: [String]) {
+        let looking_title = input[1]
+        var checker:    FacultyMember<T> = head
+        while(checker!=nil){
+            if(checker.title==looking_title){
+                checker.printSelf();
+            }
+            checker = checker.next!
+        }
+    }
+
+    //***************************************
+    //              PRINT DEPT
+    //***************************************
+    func print_department(input: [String]) {
+        let looking_dept = input[1]
+        var checker:    FacultyMember<T> = head
+        while(checker!=nil){
+            if(checker.dept==looking_dept){
+                checker.printSelf();
+            }
+            checker = checker.next!
+        }
     }
 }
 
