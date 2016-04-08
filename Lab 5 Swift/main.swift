@@ -5,13 +5,14 @@
 //  Created by Nguyen, Quang on 4/5/16.
 //  Copyright © 2016 Nguyen, Quang. All rights reserved.
 //
-
+import Swift
 import Foundation
 
 
 print("Program Begin")
+var list:LinkedList<Int> = LinkedList<Int>()
 
-let input_path = NSString(string:"~/Desktop/Lab 5 Swift/Lab 5 Swift/Lab5Data.txt").stringByExpandingTildeInPath
+let input_path = NSString(string:"~/Desktop/Lab5Data.txt").stringByExpandingTildeInPath
 do {
     let contents = try NSString(contentsOfFile: input_path, encoding: NSASCIIStringEncoding)
     
@@ -22,17 +23,17 @@ do {
         print("---------------------------------")
         let command = lineArr[0]
         switch command {
-            case "IN": insert(lineArr)
-            case "DE": delete(lineArr)
+            case "IN": list.insert(lineArr)
+            case "DE": list.delete(lineArr)
             
-            case "PA": print_all()
-            case "PI": print_ID(lineArr)
-            case "PT": print_title(lineArr)
-            case "PD": print_department(lineArr)
+            case "PA": list.print_all()
+            case "PI": list.print_ID(lineArr)
+            case "PT": list.print_title(lineArr)
+            case "PD": list.print_department(lineArr)
             
-            case "UD": update_department(lineArr)
-            case "UT": update_title(lineArr)
-            case "UP": update_pay(lineArr)
+            case "UD": list.update_department(lineArr)
+            case "UT": list.update_title(lineArr)
+            case "UP": list.update_pay(lineArr)
             
             default: print("nothing")
         }

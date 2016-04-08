@@ -1,10 +1,10 @@
-﻿import System.Collections.Generic
-import System.Linq
-import System.Text
+﻿//import System.Collections.Generic
+//import System.Linq
+//import System.Text
 
 
 class FacultyMember<T> {
-    var idnum: Int!
+    var idnum: String? = "-1"
     var name: String?
     var dept: String?
     var title: String?
@@ -12,9 +12,9 @@ class FacultyMember<T> {
     var next: FacultyMember<T>?
     init(){
     }
-    init(idnum: Int, name: String, dept: String, title: String, pay: String)
+    init(idnum: String, name: String, dept: String, title: String, pay: String)
     {
-        self.idnum = -1
+        self.idnum = idnum
         self.name = name
         self.dept = dept
         self.title = title
@@ -23,6 +23,10 @@ class FacultyMember<T> {
     }
 
     func printSelf(){
-        print(idnum + "    " + name + "        " + dept + "    " + title + "       " + pay)
+        var printStatement =   idnum! + "    "
+        printStatement += name! + "        "
+        printStatement += dept! + "    "
+        printStatement += title! + "       "
+        printStatement += pay!
     }
 }
