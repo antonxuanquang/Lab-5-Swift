@@ -8,7 +8,7 @@ public class LinkedList<T>{
     //
     //takes in the input line as a parameter
     func insert(input: [String]){
-        print("Attempting to insert an member...")
+        print("Attempting to insert a member...")
 
         let idnum:String   = input[1]//gets the idnum from the input
         let name:String    = input[2]//gets the name from the input
@@ -21,7 +21,7 @@ public class LinkedList<T>{
         //if the head of the list is not a valid ID, then the list is empty
         if(head.idnum=="-1"){
             head = newNode//set the head to the new node we are inserting, which is the only node in the list after we are done
-            let printStatement = "SUCCESS: Inserted ID " + idnum + " with name " + name
+            let printStatement = "SUCCESS: Inserted ID[" + idnum + "] with name [" + name + "]"
             print(printStatement)
             return
         }
@@ -30,7 +30,7 @@ public class LinkedList<T>{
             let tempNode: FacultyMember<T> = head;//store the current head
             newNode.next = tempNode//set the new node to point to the old head, which advances the head one forward
             head = newNode//set the head of the LinkedList to the new node we are inserting
-            let printStatement = "SUCCESS: Inserted ID " + idnum + " with name " + name
+            let printStatement = "SUCCESS: Inserted ID[" + idnum + "] with name [" + name + "]"
             print(printStatement)
             return
         }
@@ -48,14 +48,14 @@ public class LinkedList<T>{
                 else if(newNode.idnum < checker.idnum){
                     previous.next = newNode//set the node before to the new one
                     newNode.next = checker//set the new node to the next node
-                    let printStatement = "SUCCESS: Inserted ID " + idnum + " with name " + name
+                    let printStatement = "SUCCESS: Inserted ID[" + idnum + "] with name [" + name + "]"
                     print(printStatement)
                     return
                 }
                 //if the checker's next node is nil, then we are inserting at the end of the list
                 else if(checker.next==nil){
                     checker.next = newNode//just tell the last node in the linked list to point to the new node
-                    let printStatement = "SUCCESS: Inserted ID " + idnum + " with name " + name
+                    let printStatement = "SUCCESS: Inserted ID[" + idnum + "] with name [" + name + "]"
                     print(printStatement)
                     return
                 }
@@ -81,7 +81,7 @@ public class LinkedList<T>{
         while(checker != nil){//while we haven't reached the end of the list
             if(checker.idnum==looking_id){//if the idnum of our checker matches the idnum we are looking for, then we are going to delete the checker node by just not having anything point to it anymore
                 previous.next = checker.next//set the pointer of the node BEFORE the one we want to delete to be
-                let printStatement = "SUCCESS: Deleted ID " + looking_id + " with name " + checker.name!
+                let printStatement = "SUCCESS: Deleted ID[" + looking_id + "] with name [" + checker.name! + "]"
                 print(printStatement)
                 return
             }

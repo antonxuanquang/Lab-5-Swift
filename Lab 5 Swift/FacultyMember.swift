@@ -33,6 +33,9 @@ class FacultyMember<T> {
         printStatement += name! + "  \t"
         printStatement += dept! + "\t"
         printStatement += title! + "\t"
+        if(title?.characters.count<8){
+            printStatement+="\t"
+        }
         printStatement += pay!
         print(printStatement)
     }

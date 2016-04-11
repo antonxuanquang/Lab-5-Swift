@@ -1,0 +1,109 @@
+Program Begin
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[12345678] with name [T.Nute]
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[34567890] with name [B.Smith]
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[23456789] with name [S.Jones]
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[01234567] with name [B.Gates]
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[32010101] with name [S.Jobs]
+---------------------------------
+Printing all members...
+01234567	B.Gates  	COSC	INST		85000.00
+12345678	T.Nute  	COSC	ASSOCPROF	90000.00
+23456789	S.Jones  	CHEM	INST		75000.00
+32010101	S.Jobs  	COSC	PROF		125000.00
+34567890	B.Smith  	BIOL	PROF		110000.00
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[13456789] with name [J.Jones]
+---------------------------------
+Attempting to insert a member...
+ERROR: Can't insert because the member already exists
+---------------------------------
+Printing all members with a given title
+13456789	J.Jones  	MATH	PROF		100000.00
+32010101	S.Jobs  	COSC	PROF		125000.00
+34567890	B.Smith  	BIOL	PROF		110000.00
+---------------------------------
+Attempting to delete a member...
+SUCCESS: Deleted ID[23456789] with name [S.Jones]
+---------------------------------
+Attempting to update the department of a member...
+ERROR: ID[23456789] with name[S.Jones] does not exist
+---------------------------------
+Attempting to update the title of a member...
+SUCCESS: ID[01234567] with name [B.Gates] has been updated with new title[ASSTPROF]
+---------------------------------
+Attempting to update the pay of a member...
+SUCCESS: ID[01234567] with name [B.Gates] has been updated with new pay[100000.00]
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[34534565] with name [H.Nelson]
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[36323232] with name [P.Jones]
+---------------------------------
+Printing all members...
+01234567	B.Gates  	COSC	ASSTPROF	100000.00
+12345678	T.Nute  	COSC	ASSOCPROF	90000.00
+13456789	J.Jones  	MATH	PROF		100000.00
+32010101	S.Jobs  	COSC	PROF		125000.00
+34534565	H.Nelson  	ENGR	ASSOCPROF	100000.00
+34567890	B.Smith  	BIOL	PROF		110000.00
+36323232	P.Jones  	PHYS	ASSTPROF	68000.00
+---------------------------------
+Attempting to print a specific member...
+ERROR: Member with ID[13456789] and name[S.Jones] was not found!
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[00232323] with name [Y.Tittle]
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[45454545] with name [T.Tunes]
+---------------------------------
+Attempting to update the pay of a member...
+SUCCESS: ID[34534565] with name [H.Nelson] has been updated with new pay[110000.00]
+---------------------------------
+Attempting to insert a member...
+SUCCESS: Inserted ID[12121212] with name [B.Gates]
+---------------------------------
+Attempting to update the department of a member...
+SUCCESS: ID[12121212] with name [B.Gates] has been updated with new department[CHEM]
+---------------------------------
+Attempting to update the title of a member...
+SUCCESS: ID[12121212] with name [B.Gates] has been updated with new title[ASSOCPROF]
+---------------------------------
+Attempting to update the pay of a member...
+SUCCESS: ID[12121212] with name [B.Gates] has been updated with new pay[150000.00]
+---------------------------------
+Attempting to delete a member...
+SUCCESS: Deleted ID[13456789] with name [J.Jones]
+---------------------------------
+Attempting to delete a member...
+ERROR: ID[23456789] does not exist
+---------------------------------
+Attempting to print a specific member...
+ERROR: Member with ID[23456789] and name[S.Jones] was not found!
+---------------------------------
+Attempting to delete a member...
+SUCCESS: Deleted ID[12345678] with name [T.Nute]
+---------------------------------
+Printing all members...
+00232323	Y.Tittle  	CHEM	ASSTPROF	111000.00
+01234567	B.Gates  	COSC	ASSTPROF	100000.00
+12121212	B.Gates  	CHEM	ASSOCPROF	150000.00
+32010101	S.Jobs  	COSC	PROF		125000.00
+34534565	H.Nelson  	ENGR	ASSOCPROF	110000.00
+34567890	B.Smith  	BIOL	PROF		110000.00
+36323232	P.Jones  	PHYS	ASSTPROF	68000.00
+45454545	T.Tunes  	PHYS	INST		90000.00
+Program End
+Program ended with exit code: 0
